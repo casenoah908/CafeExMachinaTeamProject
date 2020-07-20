@@ -1,0 +1,51 @@
+<app-header [total]="subTotal"></app-header>
+
+<div class="table">
+    <table class="orderTable">
+        <tr>
+            <th id="head" colspan="3">Please Confirm Your Order</th>
+        </tr>
+        <tr>
+            <th id="itemHeader">
+                Item
+            </th>
+            <th id="priceHeader">
+                Price
+            </th>
+        </tr>
+
+        <tr class="item" *ngFor="let item of items; let i = index">
+            <td id="item">
+                {{item.name}}
+            </td>
+            <td class="moneyCol">
+                {{item.price | currency}}
+            </td>
+            <td class="removeBtn"><button class="btn btn-sm btn-danger" (click)="remove(i)">Remove</button></td>
+        </tr>
+
+
+
+        <tr>
+            <td colspan="3" class="break"></td>
+        </tr>
+
+        <tr>
+            <td class="totalRows">Subtotal:</td>
+            <td class="moneyCol">{{subTotal |currency}}</td>
+        </tr>
+        <tr>
+            <td class="totalRows">Tax:</td>
+            <td class="moneyCol">{{tax| currency}}</td>
+        </tr>
+
+        <tr class="bottom">
+            <td class="totalRows">Total<br /></td>
+            <td class="moneyCol">{{total| currency}}</td>
+        </tr>
+
+        <tr>
+            <td id="confirmBtn" colspan="2"><button class="btn btn-success" (click)="payment()">Confirm</button></td>
+        </tr>
+    </table>
+</div>

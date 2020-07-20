@@ -1,0 +1,17 @@
+<app-header [total]="total"></app-header>
+
+<h2 class="header2">{{categoryName | titlecase}} Menu:</h2>
+<hr class="hz">
+<div class="page">
+
+    <div (click)="cardClick(products.indexOf(product))" class="card" *ngFor="let product of products">
+        <div class="previewContents">
+            <img class="previewPic" src="{{product.imageUrl}}" alt="">
+            <h5 class="previewName card-title">{{product.name}}</h5>
+        </div>
+
+        <div id="collapse{{products.indexOf(product)}}" class="collapse-card card-text">
+            <app-food-desc [product]="product" (addToCart)="add(product)"></app-food-desc>
+        </div>
+    </div>
+</div>

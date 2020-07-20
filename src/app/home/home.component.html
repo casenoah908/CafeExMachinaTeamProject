@@ -1,0 +1,56 @@
+<app-header [total]="total"></app-header>
+
+<div>
+    <h2 class="mt-5" style="text-align:center" routerLink="placeholder">Cafe Ex Machina</h2>
+
+    <div *ngIf="!showBreakfast && !showPanini && !showDrinks" id="nothing" class="container">
+        Nothing available at this time
+    </div>
+
+    <mat-grid-list cols="1" rowHeight="575px" *ngIf="showBreakfast">
+        <mat-grid-tile>
+            <mat-card (click)="categorySelector('breakfast')">
+                <mat-card-title>Breakfast</mat-card-title><br>
+                <mat-card-subtitle>Only available from 7:00am - 11:00am</mat-card-subtitle>
+                <img mat-card-image src="assets/images/breakfast.jpg" alt="breakfast items" height="316" width="316">
+                <mat-card-content>
+                    Choose from our wonderful selection of breakfast foods
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="1" rowHeight="575px" *ngIf="showPanini">
+        <mat-grid-tile>
+            <mat-card (click)="categorySelector('panini')">
+                <mat-card-title>Paninis</mat-card-title><br>
+                <mat-card-subtitle>Only available after Breakfast (11:00am - 9:00pm)</mat-card-subtitle>
+                <img mat-card-image src="assets/images/panini.jpg" alt="hot sandwiches" height="316" width="316">
+                <mat-card-content>
+                    Choose from our wonderful selection of paninis
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="1" rowHeight="575px" *ngIf="showDrinks">
+
+        <mat-grid-tile>
+            <mat-card (click)="categorySelector('cafe drink')">
+                <mat-card-title>Cafe Drinks</mat-card-title><br>
+                <mat-card-subtitle>Available all day (7:00am - 9:00pm)</mat-card-subtitle>
+                <img mat-card-image src="assets/images/coffee.JPG" alt="cafe items" height="316" width="316">
+                <mat-card-content>
+                    Choose from our wonderful selection of drinks
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+    <div id="debug">
+        <input id="time" type="time">
+        <button (click)="setDebugTime()" class="btn btn-light">Set Debug Time</button>
+    </div>
+
+</div>

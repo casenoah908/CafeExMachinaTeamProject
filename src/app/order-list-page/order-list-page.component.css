@@ -1,0 +1,54 @@
+div.table {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    table-layout: auto;
+}
+
+td,
+th {
+    border-top: none;
+}
+
+#priceHeader {
+    text-align: right;
+}
+
+#head {
+    text-align: center;
+}
+
+#itemHeader {
+    text-align: center;
+}
+
+.orderTable {
+    width: 100%
+}
+
+.moneyCol {
+    text-align: right;
+    width: 1%;
+}
+
+.removeBtn {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.totalRows {
+    text-align: right;
+}
+
+.break {
+    border-top-style: solid;
+}
+
+#confirmBtn {
+    text-align: right;
+}
+
+.removeBtn {
+    margin-bottom: 5px;
+}

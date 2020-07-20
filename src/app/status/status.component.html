@@ -1,0 +1,36 @@
+<app-header [total]="total" [disabled]='true'></app-header>
+
+<div class="container">
+    <h2>Thanks for ordering from Cafe Ex Machina!</h2>
+    <br>
+    <h4>Have a great day!</h4>
+
+    <div id="status">
+        <div class="row">
+            <div class="col">
+                <div [ngClass]="{'completed' : phase >= 1}" class="circle">
+                    <div *ngIf="phase >= 1" class="check fade-in">👍</div>
+                </div>
+                Recieved
+            </div>
+            <div class="col">
+                <div [ngClass]="{'completed' : phase >= 2}" class="circle">
+                    <div *ngIf="phase >= 2" class="check fade-in">👍</div>
+                </div>
+                Cooking
+            </div>
+            <div class="col">
+                <div [ngClass]="{'completed' : phase >= 3}" class="circle">
+                    <div *ngIf="phase >= 3" class="check fade-in">👍</div>
+                </div>
+                Order Ready
+            </div>
+        </div>
+    </div>
+
+    <h5 *ngIf="phase == 0">Order not yet recieved{{ellipse}}</h5>
+    <h5 *ngIf="phase == 1">Order recieved, preparing to cook{{ellipse}}</h5>
+    <h5 *ngIf="phase == 2">Order cooked, preparing to serve{{ellipse}}</h5>
+    <h5 *ngIf="phase == 3">Order ready for pick-up!</h5>
+
+</div>

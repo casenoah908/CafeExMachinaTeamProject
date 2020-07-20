@@ -1,0 +1,12 @@
+#total {
+    cursor: pointer;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#total:hover {
+    background-color: rgb(87, 87, 87);
+}

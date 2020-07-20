@@ -1,0 +1,42 @@
+<app-header [total]="total"></app-header>
+
+<div id="all" class="container">
+    <h1>Choose a Payment Method</h1>
+    <div id="methods">
+
+        <div [ngClass]="{'small' : currentSelection > 0}" (click)="card()" class="method" id="card">
+            <h5 [ngClass]="{'smallText' : currentSelection > 0}">Pay With Card 💳</h5>
+        </div>
+
+        <div [ngClass]="{'small' : currentSelection > 0}" (click)="cash()" class="method" id="cash">
+            <h5 [ngClass]="{'smallText' : currentSelection > 0}">Pay With Cash 💵</h5>
+        </div>
+
+    </div>
+
+    <div *ngIf="currentSelection != 0">
+        <div id="form" *ngIf="currentSelection == 1">
+            <div class="input-group mb-3">
+                <input [(ngModel)]="name" type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input [(ngModel)]="cardNumber" type="tel" maxlength="16" class="form-control" placeholder="Card Number" aria-label="Card Number" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input [(ngModel)]="expirationDate" type="date" class="form-control" placeholder="Expiration Date" aria-label="Expiration Date" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input [(ngModel)]="securityCode" type="tel" maxlength="4" class="form-control" placeholder="Security Code" aria-label="Security Code" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input [(ngModel)]="billingAddress" type="text" class="form-control" placeholder="Billing Address" aria-label="Billing Address" aria-describedby="basic-addon1">
+            </div>
+        </div>
+
+        <h4 *ngIf="currentSelection == 2">Please pay at the counter</h4>
+
+        <h5 id="error" style="color: red;" *ngIf="error && currentSelection == 1">Card information incomplete</h5>
+
+        <button id="continue" class="btn btn-dark" (click)="continue()">Continue</button>
+    </div>
+</div>

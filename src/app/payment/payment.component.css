@@ -1,0 +1,67 @@
+h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#methods {
+    margin-bottom: 30px;
+    text-align: center;
+    display: inline-block;
+}
+
+.method {
+    border-radius: 15px;
+    transition: transform 0.2s;
+    color: white;
+    display: inline-block;
+    height: 150px;
+    width: 300px;
+    margin: 10px;
+    transition: height 0.3s ease;
+}
+
+.small {
+    height: 75px;
+}
+
+.method:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+#card {
+    background-color: #FD8D8D
+}
+
+#cash {
+    background-color: rgb(141, 253, 141);
+}
+
+h5 {
+    font-size: 1.4em;
+    margin-top: 60px;
+    transition: margin-top 0.3s ease;
+}
+
+.smallText {
+    margin-top: 26px;
+}
+
+#all {
+    text-align: center;
+}
+
+#continue {
+    margin-top: 30px;
+}
+
+#form {
+    max-width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#error {
+    margin-top: 35px;
+}

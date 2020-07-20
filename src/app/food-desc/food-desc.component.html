@@ -1,0 +1,19 @@
+<div class="container mx-auto mt-5 border border-dark" style="width: 1000px; background-color:bisque">
+    <div class="row my-3 mx-3">
+        <div class="col">
+            <img src={{product.imageUrl}} alt="foodItem">
+        </div>
+        <div class="col">
+            <h1>{{product.name}}</h1>
+            <p style="font-size:larger;">{{product.description}}</p>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col ml-5">
+            <h1>{{product.price | currency}}</h1>
+        </div>
+        <div class="col">
+            <div class="float-right mr-4"><button class="btn btn-light" (click)="AddToOrder(product)">Add to Order</button></div>
+        </div>
+    </div>
+</div>
